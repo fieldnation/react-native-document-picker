@@ -60,7 +60,7 @@ dependencies {
 ```
 
 ```java
-// file: MainApplication.java
+// file: android/app/src/main/java/<packageName>/MainApplication.java
 ...
 
 import io.github.elyx0.reactnativedocumentpicker.DocumentPickerPackage; // Import package
@@ -80,6 +80,47 @@ public class MainApplication extends Application implements ReactApplication {
     }
 ...
 }
+```
+
+If you want to also take pictures with the camera, you'll need to also add these
+XML snippets to the next files:
+
+```xml
+// AndroidManifest.xml
+<manifest>
+  ...
+  <application>
+    ...
+    <provider
+      android:name="android.support.v4.content.FileProvider"
+      android:authorities="${applicationId}"
+      android:exported="false"
+      android:grantUriPermissions="true">
+      <meta-data
+        android:name="android.support.FILE_PROVIDER_PATHS"
+        android:resource="@xml/file_paths"/>
+    </provider>
+  </application>
+
+  <uses-feature android:name="android.hardware.camera" android:required="false"/>
+
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+</manifest>
+```
+
+```xml
+// res/xml/file_paths.xml
+<?xml version="1.0" encoding="utf-8"?>
+...
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+  <external-path
+    name="pictures-private"
+    path="Android/data/${applicationId}/files/Pictures"/>
+  <external-path
+    name="pictures-public"
+    path="."/>
+  <root-path name="external_files" path="/storage/"/>
+</paths>
 ```
 
 ### Windows
