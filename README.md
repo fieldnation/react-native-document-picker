@@ -102,9 +102,7 @@ XML snippets to the next files:
     </provider>
   </application>
 
-  <uses-feature android:name="android.hardware.camera" android:required="false"/>
-
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+  <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
 </manifest>
 ```
 
