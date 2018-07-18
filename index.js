@@ -50,6 +50,10 @@ function pick(opts) {
     console.warn(`RNDocumentPicker: Android API level ${Platform.Version} does not support multiple types, falling back to */*`);
   }
 
+  if ( !('onlyDefaults' in opts) ) {
+    opts.onlyDefaults = false;
+  }
+
   if ( !('private' in opts) ) {
     opts.private = false;
   }
