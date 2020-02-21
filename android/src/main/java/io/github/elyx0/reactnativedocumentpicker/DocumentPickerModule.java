@@ -54,7 +54,7 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 	private static final String E_UNEXPECTED_EXCEPTION = "UNEXPECTED_EXCEPTION";
 
 	private static final String OPTION_TYPE = "type";
-	private static final String OPTION_MULIPLE = "multiple";
+	private static final String OPTION_MULTIPLE = "multiple";
 	private static final String OPTION_PRIVATE = "private";
 
 	private static final String FIELD_URI = "uri";
@@ -133,7 +133,7 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 				}
 			}
 
-			boolean multiple = !args.isNull(OPTION_MULIPLE) && args.getBoolean(OPTION_MULIPLE);
+			boolean multiple = !args.isNull(OPTION_MULTIPLE) && args.getBoolean(OPTION_MULTIPLE);
 			if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR2) {
 				intent.putExtra(Intent.EXTRA_ALLOW_MULTIPLE, multiple);
 			}

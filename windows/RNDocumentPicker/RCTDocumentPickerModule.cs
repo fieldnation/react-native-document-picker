@@ -23,7 +23,7 @@ namespace RNDocumentPicker
 
 	private static readonly String OPTION_TYPE = "type";
         private static readonly String CACHE_TYPE = "cache";
-    private static readonly String OPTION_MULIPLE = "multiple";
+    private static readonly String OPTION_MULTIPLE = "multiple";
 
 	private static readonly String FIELD_URI = "uri";
 	private static readonly String FIELD_NAME = "name";
@@ -99,7 +99,7 @@ namespace RNDocumentPicker
                     {
                         if (_isInForeground)
                         {
-                            var isMultiple = options.Value<bool>(OPTION_MULIPLE);
+                            var isMultiple = options.Value<bool>(OPTION_MULTIPLE);
                             if (isMultiple)
                             {
                                 await PickMultipleFileAsync(openPicker, cache, promise);

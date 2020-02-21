@@ -19,7 +19,7 @@ static NSString *const E_DOCUMENT_PICKER_CANCELED = @"DOCUMENT_PICKER_CANCELED";
 static NSString *const E_INVALID_DATA_RETURNED = @"INVALID_DATA_RETURNED";
 
 static NSString *const OPTION_TYPE = @"type";
-static NSString *const OPTION_MULIPLE = @"multiple";
+static NSString *const OPTION_MULTIPLE = @"multiple";
 
 static NSString *const FIELD_URI = @"uri";
 static NSString *const FIELD_NAME = @"name";
@@ -76,7 +76,7 @@ RCT_EXPORT_METHOD(pick:(NSDictionary *)options
     
     // #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 110000
     //     if (@available(iOS 11, *)) {
-    //         documentPicker.allowsMultipleSelection = [RCTConvert BOOL:options[OPTION_MULIPLE]];
+    //         documentPicker.allowsMultipleSelection = [RCTConvert BOOL:options[OPTION_MULTIPLE]];
     //     }
     // #endif
     
