@@ -206,18 +206,17 @@ public class DocumentPickerModule extends ReactContextBaseJavaModule {
 				clipData = data.getClipData();
 			}
 
-			// Check if intent is from camera and set the uri to its file
-			boolean isCamera = true;
-			if (uri != null) {
-				String action = data.getAction();
-				isCamera = action != null && action.equals(MediaStore.ACTION_IMAGE_CAPTURE);
+			boolean isCamera = false;
+			// If intent came from camera
+			if (uri == null && data == null) {
+				uri = outputFileUri;
+				isCamera = true;
 			}
-			if (isCamera) uri = outputFileUri;
 
 			try {
 				WritableArray results = Arguments.createArray();
 
-				if (uri != null) {
+				if (uri != null && isCamera) {
 					results.pushMap(getMetadata(uri));
 				} else if (clipData != null && clipData.getItemCount() > 0) {
 					final int length = clipData.getItemCount();
