@@ -1,3 +1,7 @@
+# INFO
+
+We forked this repo because it did most of what we wanted, but had to make a few additional changes. Master branch is the true master branch from the fork, which is close to what we want but not quite. `fnPickerV1` branch is our updated branch. This branch includes both changs from user piranna/react-native-document-picker and local changes here to give us both multi file selection as well as the bottom dialog pop.
+
 # react-native-document-picker
 
 A React Native wrapper for Apple's ``UIDocumentMenuViewController`` and for Android's ``Intent.ACTION_OPEN_DOCUMENT`` / ``Intent.ACTION_PICK``.
